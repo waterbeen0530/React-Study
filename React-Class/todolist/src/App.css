@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Add {
+  padding: 1rem;
+  color: aqua;
+  font-size: 24px;
+  background-color: black;
+}
+
+.gray-box {
+  width: 64px;
+  height: 64px;
+  background: gray;
+}
