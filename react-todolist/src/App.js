@@ -1,27 +1,6 @@
-import React from 'react';
-import { createGlobalStyle } from 'styled-components';
-import TodoTemplate from './components/TodoTemplate/TodoTemplate';
-import TodoHead from './components/TodoHead/TodoHead';
-import TodoList from './components/TodoList/TodoList';
+import React, { useState } from 'react';
+import Home from './pages/Home'
  
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: #e9ecef;
-  }
-`;
- 
-function App() {
-  return (
-    <>
-      <GlobalStyle />
-      <TodoTemplate>
-        <TodoHead />
-        <TodoList>
-          
-        </TodoList>
-      </TodoTemplate>
-    </>
-  );
-}
+const App = () => <Home />;
  
 export default App;
