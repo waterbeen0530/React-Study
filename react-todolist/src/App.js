@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import Home from './pages/Home'
+import TodoList from './TodoList';
  
-const App = () => <Home />;
+function App () {
+  return(
+    <>
+      <TodoList />
+    </>
+  );
+}
  
 export default App;
