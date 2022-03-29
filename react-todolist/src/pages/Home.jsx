@@ -3,23 +3,17 @@ import InputBox from '../components/InputBox';
 import ToDoItemList from '../components/ToDoItemList'; 
 
 const Home = () => { 
-  const [todoList, setTodoList] = useState([]); 
+  const [todoList, setTodoList] = useState(JSON.parse(window.localStorage.getItem("text")) || []); 
   
   return ( 
   <div className="homepage__container">
     <InputBox todoList={todoList} setTodoList={setTodoList} /> 
     <ToDoItemList  
-      title={'할 일'} 
+      title={'할 일 목록'} 
       todoList={todoList} 
       setTodoList={setTodoList}
       checkedList={false}
-      />  
-    <ToDoItemList 
-      title={'완료한 항목'} 
-      todoList={todoList} 
-      setTodoList={setTodoList}
-      checkedList={true}
-    /> 
+      /> 
   </div> 
   ); 
 }; 
