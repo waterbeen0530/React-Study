@@ -35,6 +35,7 @@ const TodoList = () => {
     saveData()
   },[todoList])
   console.log(todoList);
+
   return (
     <div className={ styles.container }>
       <form className={ styles.input_wrapper } onSubmit={onSubmit}>
