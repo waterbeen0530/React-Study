@@ -4,12 +4,22 @@
   box-sizing: border-box;
 }
 
+.li_body {
+  margin: 15px 15px 15px 15px;
+  list-style: none;
+
+}
 
 .container {
   width: 242px;
   height: 320px;
+  margin: 0 3.5px 3.5px 3.5px;
   background-color: #ffffff;
+}
 
+.container img {
+  width: 220px;
+  margin: 10px 0 0 10px;
 }
 
 .li_content {
@@ -35,12 +45,14 @@
 }
 
 .li_button_vowel {
+  margin: 20px 0 0 0;
   background-color: #ffffff;
 }
 
 .li_button1 {
   width: 80px;
   height: 28px;
+  margin-right: 3.5px;
   border-radius: 3px;
   border-color: red;
   color: red;
@@ -50,6 +62,7 @@
 .li_button2 {
   width: 80px;
   height: 28px;
+  margin-right: 3.5px;
   border-radius: 3px;
   border-color: #f0ad4e;
   color: #f0ad4e;
@@ -59,6 +72,7 @@
 .li_button3 {
   width: 60px;
   height: 28px;
+  margin-right: 3.5px;
   border-radius: 3px;
   border-color: #1A7BB9;
   color: #1A7BB9;

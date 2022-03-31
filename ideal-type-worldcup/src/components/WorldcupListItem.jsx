@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./WorldcupListItem.module.css";
 import { FaPlay, FaListOl, FaShare } from "react-icons/fa";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import mainCat from './img/mainCat.png';
 
 function WorldcupListItem () {
 
@@ -15,9 +11,9 @@ function WorldcupListItem () {
 
 
   return (
-    <li>
+    <li className={styles.li_body}>
       <div className={styles.container}>
-        <img src="cat/main_cat" alt="" />
+        <img src={mainCat} alt="" />
         <div className={styles.li_content}>
           <p className={styles.li_title}>고양이 월드컵</p>
           <p className={styles.li_p}>고양이 월드컵입니다. 야무지게 즐겨주세요.</p>
