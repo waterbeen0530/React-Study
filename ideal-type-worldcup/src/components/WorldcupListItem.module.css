@@ -7,7 +7,6 @@
 .li_body {
   margin: 15px 15px 15px 15px;
   list-style: none;
-
 }
 
 .container {
@@ -17,6 +16,9 @@
   background-color: #ffffff;
 }
 
+.container:hover {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
 .container img {
   width: 220px;
   margin: 10px 0 0 10px;
@@ -31,14 +33,14 @@
   background-color: #ffffff;
 }
 
-.li_title {
+.li_content p:first-child {
   margin: 2px 0 5px 0;
   color: #676a6c;
   font-size: 16px;
   font-weight: 600;
 }
 
-.li_p {
+.li_content p:nth-child(2) {
   margin-top: 5px;
   font-size: 11px;
   color: #676a6c;
@@ -49,7 +51,7 @@
   background-color: #ffffff;
 }
 
-.li_button1 {
+.li_button_vowel button:first-child {
   width: 80px;
   height: 28px;
   margin-right: 3.5px;
@@ -59,7 +61,7 @@
   background-color: #ffffff;
 }
 
-.li_button2 {
+.li_button_vowel button:nth-child(2) {
   width: 80px;
   height: 28px;
   margin-right: 3.5px;
@@ -69,7 +71,7 @@
   background-color: #ffffff;
 }
 
-.li_button3 {
+.li_button_vowel button:nth-child(3) {
   width: 60px;
   height: 28px;
   margin-right: 3.5px;

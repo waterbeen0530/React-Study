@@ -5,9 +5,8 @@ import Worldcup from "./components/Worldcup";
 function App() {
   return (
     <div className="App">
-      <Worldcup />
+      <Worldcup/>
     </div>
   );
 }
-
 export default App;

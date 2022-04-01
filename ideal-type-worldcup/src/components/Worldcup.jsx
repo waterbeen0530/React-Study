@@ -1,34 +1,56 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import styles from './Worldcup.module.css';
 
-const image = importAll(require.context('../../public/img'))
+const items = [
+  {
+    name:'고양이1',
+    src: 'img/cat1.png'
+  },
+  {
+    name: '고양이2',
+    src: 'img/cat2.png'
+  },
+  {
+    name: '고양이3',
+    src: 'img/cat3.png'
+  },
+  {
+    name: '고양이4',
+    src: 'img/cat4.png'
+  },
+];
 
-function importAll(event){
-  let img=[];
+const Worldcup = () => {
+  const[cats, setCats] = useState([]);
+  const[displays, setDisplays] = useState([]);
+  const[winners,setWinners] = useState([]);
 
-    event.keys().forEach((item, index)=>{
-      console.log(item)
-    img[index]=item
-  })
+  useEffect(() => {
+    const cat1 = Math.floor(Math.random() * items.length);
+    let cat2 = Math.floor(Math.random() * (items.length-1));
+    if (cat1 === cat2) {
+      cat2 = items.length
+    }
+    setDisplays([items[cat1], items[cat2]]);
+  },[]);
 
-  return img
-}
-
-function Worldcup () {
-  const getRendomIndex = function() {
-    const random = Math.floor(Math.random() * image.length);
-    return image[random];
+  const clickHandler = () => {
+    if (cats)
   }
 
+
   return (
-    <>
-    <h1>고양이 월드컵</h1>
-    
-        <img src={`img/${getRendomIndex()}`} alt="" />
-        <img src={`img/${getRendomIndex()}`} alt="" />
-    
-    
-    </>
+    <div className={styles.container}>
+      <h1>고양이 월드컵</h1>
+      <div className={styles.warrper}>
+        {displays.map(item => {
+        return <div className={styles.worldcup} key={item.name}>
+          <img src={item.src} alt="cat" />
+          <div>{item.name}</div>
+        </div>
+      })}
+      </div>
+    </div>
   );
 }
-
 export default Worldcup;

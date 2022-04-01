@@ -17,6 +17,8 @@ function MainScreen () {
       <body>
         <WorldcupList />
       </body>
+      
+
     </div>
   );
 }
