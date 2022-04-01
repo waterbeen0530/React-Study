@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState, useEffect} from "react";
 import styles from './Worldcup.module.css';
 
 const items = [
@@ -21,36 +21,48 @@ const items = [
 ];
 
 const Worldcup = () => {
-  const[cats, setCats] = useState([]);
-  const[displays, setDisplays] = useState([]);
-  const[winners,setWinners] = useState([]);
-
+  const [cats, setCats] = useState([]);
+  const [displays, setDisplays] = useState([]);
+  const [winners, setWinners] = useState([]);
+ 
   useEffect(() => {
-    const cat1 = Math.floor(Math.random() * items.length);
-    let cat2 = Math.floor(Math.random() * (items.length-1));
-    if (cat1 === cat2) {
-      cat2 = items.length
+    items.sort(() => Math.random() -0.5);
+    setCats(items);
+    setDisplays([items[0], items[1]]);
+  }, []);
+ 
+  const clickHandler = (cat) => () => {
+    if(cats.length <= 2) {
+      if(winners.length === 0) {
+        setDisplays([cat]);
+      }
+      else {
+        let updatedCat = [...winners, cat];
+        setCats(updatedCat);
+        setDisplays([updatedCat[0], updatedCat[1]]);
+        setWinners([]);
+      }
     }
-    setDisplays([items[cat1], items[cat2]]);
-  },[]);
-
-  const clickHandler = () => {
-    if (cats)
+    else if(cats.length > 2){
+      setWinners([...winners, cat]);
+      setDisplays([cats[2], cats[3]]);
+      setCats(cats.slice(2))
+    }
   }
-
-
+ 
   return (
-    <div className={styles.container}>
-      <h1>고양이 월드컵</h1>
-      <div className={styles.warrper}>
-        {displays.map(item => {
-        return <div className={styles.worldcup} key={item.name}>
-          <img src={item.src} alt="cat" />
-          <div>{item.name}</div>
-        </div>
+    <>
+      <h1>고양이 올림픽</h1>
+      {displays.map((d) => {
+        return (
+          <div key={d.name} onClick={clickHandler(d)}>
+            <img src={d.src} alt="" />
+            <p>{d.name}</p>
+          </div>
+        );
       })}
-      </div>
-    </div>
+    </>
   );
 }
+
 export default Worldcup;
