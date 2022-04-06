@@ -4,14 +4,63 @@
   box-sizing: border-box;
 }
 
-.container h1{
-  display: flex;
-  justify-content: center;
+.real_container {
+  position: relative;
 }
 
+.container {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  top: 250%;
+  left: 25%;
+  border: 1px solid red;
+  background-color: black;
+}
 
-.warrper{
+.title {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  background-color: black;
+}
+
+.container h1 {
+  color: aliceblue;
+  font-size: 40px;
+  background-color: black;
+}
+
+.content {
+  
+  display: flex;
+  justify-content: center;
+  display: flex;
+  background-color: black;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 25px;
+}
+
+.img {
+  width: 370px;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.img:hover {
+  z-index: 5;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.p {
+  position: absolute;
+  left: 30%;
+  z-index: 3;
+  font-size: 40px;
+  font-weight: 600;
 }
