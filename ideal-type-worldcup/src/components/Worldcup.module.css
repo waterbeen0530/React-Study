@@ -49,6 +49,7 @@
   height: 100%;
   cursor: pointer;
   transition: 0.5s;
+  z-index: 3;
 }
 
 .img:hover {
